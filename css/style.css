@@ -15,6 +15,11 @@ footer.page-footer {
 .chip {
   margin: 5px;
 }
+.fil0 {stroke:#455a64}
+.fil1 {fill:#eda85d}
+.fil2 {fill:#f2c38b;stroke:#f2c38b}
+.fil3 {fill:#c5843d}
+.fil4 {fill:#d26154}
 .cat {
   margin: 0 auto;
   width: 250px;
@@ -25,8 +30,13 @@ footer.page-footer {
 #cat3 {
   transform-origin: 50% 50%;
 }
-.pen {
+.pencil {
   margin: 20px auto;
+	width: 250px;
+	height: 75px;
+}
+#pencil1{
+transform: translate(2000px,64px);
 }
 
 .browser {

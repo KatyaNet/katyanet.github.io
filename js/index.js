@@ -53,11 +53,19 @@ $(document).ready(function () {
       $('#cat3').css("transform", "rotate(" + (num - (Math.sin(num / 2 * (Math.PI / 180)) * 30)) + "deg)");
     };
 
-    // pen
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      $('.pen').css("background-position", "0px");
+    // pencil
+    let pencil = document.querySelector('.pencil');
+    let pencilBottom = pencil.offsetTop + pencil.offsetHeight;
+    let windowBottom = window.innerHeight + window.scrollY;
+
+    if (windowBottom >= pencilBottom) {
+      let pencilMod = (windowBottom - pencilBottom) / (document.body.offsetHeight - pencilBottom);
+
+      $('#pencil1').css("transform", "translate(" + pencilMod * 2000 + "px," + (Math.cos(pencilMod * 20 * Math.PI) * 16 + 32) + "px)");
+      $('#pencil2').css("stroke-dashoffset", 2200 - pencilMod * 2200);
     } else {
-      $('.pen').css("background-position", "325px");
+      $('#pencil1').css("transform", "translate(0,64px)");
+      $('#pencil2').css("stroke-dashoffset", 2200);
     }
 
   };
