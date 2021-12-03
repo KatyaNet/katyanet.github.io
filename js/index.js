@@ -41,15 +41,12 @@ $(document).ready(function () {
   });
 
   // SCROLLING ACTIONS
-  let pencil = document.querySelector('.pencil');
-  let pencilBottom = pencil.offsetTop + pencil.offsetHeight;
-
   window.onscroll = function () {
 
+    // cat
     let position = $("body").scrollTop() || $(window).scrollTop();
     catRotate(-position % 360);
-
-    // cat
+    
     function catRotate(num) {
       $('#cat1').css("transform", "rotate(" + num + "deg)");
       $('#cat2').css("transform", "rotate(" + (num - (Math.sin(num / 2 * (Math.PI / 180)) * 25)) + "deg)");
@@ -57,7 +54,8 @@ $(document).ready(function () {
     };
 
     // pencil
-
+    let pencil = document.querySelector('.pencil');
+    let pencilBottom = pencil.offsetTop + pencil.offsetHeight;
     let windowBottom = window.innerHeight + window.scrollY;
 
     if (windowBottom >= pencilBottom) {
