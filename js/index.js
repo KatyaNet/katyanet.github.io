@@ -41,6 +41,9 @@ $(document).ready(function () {
   });
 
   // SCROLLING ACTIONS
+  let pencil = document.querySelector('.pencil');
+  let pencilBottom = pencil.offsetTop + pencil.offsetHeight;
+
   window.onscroll = function () {
 
     let position = $("body").scrollTop() || $(window).scrollTop();
@@ -54,14 +57,13 @@ $(document).ready(function () {
     };
 
     // pencil
-    let pencil = document.querySelector('.pencil');
-    let pencilBottom = pencil.offsetTop + pencil.offsetHeight;
+
     let windowBottom = window.innerHeight + window.scrollY;
 
     if (windowBottom >= pencilBottom) {
       let pencilMod = (windowBottom - pencilBottom) / (document.body.offsetHeight - pencilBottom);
 
-      $('#pencil1').css("transform", "translate(" + pencilMod * 2000 + "px," + (Math.cos(pencilMod * 20 * Math.PI) * 16 + 32) + "px)");
+      $('#pencil1').css("transform", "translate(" + pencilMod * 2000 + "px," + (Math.cos(pencilMod * 20 * Math.PI) * 32 + 32) + "px)");
       $('#pencil2').css("stroke-dashoffset", 2200 - pencilMod * 2200);
     } else {
       $('#pencil1').css("transform", "translate(0,64px)");
